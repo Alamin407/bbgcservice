@@ -1,4 +1,4 @@
-import { db } from "@/db";
+import { getDb } from "@/db";
 import { enquiries } from "@/db/schema";
 import { enquiryTopics } from "@/lib/content";
 import { and, eq, gte, count } from "drizzle-orm";
@@ -25,6 +25,7 @@ export async function POST(request: Request) {
   if (message.length < 10 || message.length > 4000) return error("Please describe your enquiry in 10–4,000 characters.");
   if (data.consent !== true) return error("Please confirm that we may use these details to respond.");
   try {
+    const db = getDb();
     const [recent] = await db.select({ total: count() }).from(enquiries).where(and(eq(enquiries.email, email), gte(enquiries.createdAt, new Date(Date.now() - 15 * 60 * 1000))));
     if (recent.total >= 4) return error("You have already sent several enquiries. Please try again in 15 minutes or email us directly.", 429);
     const [saved] = await db.insert(enquiries).values({ name, email, company, service, message, consent: true }).returning({ id: enquiries.id });

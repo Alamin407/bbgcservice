@@ -1,4 +1,4 @@
-import { db } from "@/db";
+import { getDb } from "@/db";
 import { subscribers } from "@/db/schema";
 
 export const runtime = "nodejs";
@@ -14,6 +14,7 @@ export async function POST(request: Request) {
   } catch { return Response.json({ error: "Please enter your email address." }, { status: 400 }); }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) return Response.json({ error: "Please enter a valid email address." }, { status: 400 });
   try {
+    const db = getDb();
     await db.insert(subscribers).values({ email }).onConflictDoNothing({ target: subscribers.email });
     return Response.json({ ok: true });
   } catch { return Response.json({ error: "Sign-up is temporarily unavailable. Please try again." }, { status: 503 }); }
