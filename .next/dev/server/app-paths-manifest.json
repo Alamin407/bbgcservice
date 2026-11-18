@@ -1,0 +1,7 @@
+{
+  "/[section]/[slug]/page": "app/[section]/[slug]/page.js",
+  "/about-us/page": "app/about-us/page.js",
+  "/careers/page": "app/careers/page.js",
+  "/insights/page": "app/insights/page.js",
+  "/page": "app/page.js"
+}

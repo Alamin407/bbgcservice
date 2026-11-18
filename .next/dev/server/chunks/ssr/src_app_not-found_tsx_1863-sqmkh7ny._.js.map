@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Alamin/Desktop/nngcmarketing/src/app/not-found.tsx"],"sourcesContent":["import Link from \"next/link\";\nimport { ArrowRight } from \"lucide-react\";\nimport { Eyebrow } from \"@/components/ui\";\nexport default function NotFound() {\n  return <section className=\"not-found\"><div className=\"container\"><Eyebrow>404 · Page not found</Eyebrow><h1>This page has moved.</h1><p>We couldn’t find the page you were looking for. Explore our services or return to the homepage.</p><div className=\"hero-actions\"><Link className=\"button button-primary\" href=\"/\">Back to homepage <ArrowRight size={16} /></Link><Link className=\"text-link\" href=\"/services\">Our services <ArrowRight size={15} /></Link></div></div></section>;\n}\n"],"names":["NotFound","className","href","size"],"mappings":";;;;;AAAA;AACA;AACA;;;;;AACe,SAASA;IACtB,qBAAO,8OAAC;QAAQC,WAAU;kBAAY,cAAA,8OAAC;YAAIA,WAAU;;8BAAY,8OAAC,mIAAO;8BAAC;;;;;;8BAA8B,8OAAC;8BAAG;;;;;;8BAAyB,8OAAC;8BAAE;;;;;;8BAAmG,8OAAC;oBAAIA,WAAU;;sCAAe,8OAAC,0LAAI;4BAACA,WAAU;4BAAwBC,MAAK;;gCAAI;8CAAiB,8OAAC,iOAAU;oCAACC,MAAM;;;;;;;;;;;;sCAAa,8OAAC,0LAAI;4BAACF,WAAU;4BAAYC,MAAK;;gCAAY;8CAAa,8OAAC,iOAAU;oCAACC,MAAM;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACxb"}}]
+}
